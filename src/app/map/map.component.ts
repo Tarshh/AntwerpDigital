@@ -59,16 +59,12 @@ export class MapComponent implements AfterViewInit, OnInit {
     }
 
     getSearchedData(): void {
-        const searchedFeatures = this.mapService.getSearchValue();
-        const values = { ...searchedFeatures };
-        console.log(values);
-        console.log(searchedFeatures);
-        console.log(searchedFeatures[0]);
-        // this.searchedFeatures.forEach(element => {
-        //     this.placeMarkersAndPopups(element);
-        // });
-        searchedFeatures.forEach(element => {
-            this.placeMarkersAndPopups(element);
-        });
+        this.mapService.getSearchValue()
+            .then(response => {
+                response.forEach(element => {
+                    console.log(element);
+                    this.placeMarkersAndPopups(element);
+                });
+            })
     }
 }

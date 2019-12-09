@@ -1,0 +1,22 @@
+.nav-link{
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-bottom: 8px;
+    color: white;
+}
+
+.active{
+    border-bottom: 2px solid rgb(255, 0, 179);
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-bottom: 8px;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+body{
+    margin-left: 10px;
+}

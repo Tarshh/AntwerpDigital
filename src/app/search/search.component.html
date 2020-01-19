@@ -1,6 +1,9 @@
-<div class="container">
-    <mat-label>Selecteer een gemeente:</mat-label>
+<div class="search">
+    <mat-label>Selecteer een district:</mat-label>
     <select matNativeControl (change)="onChange($event.target.value)">
-        <option *ngFor="let city of citiesList" value="{{city}}">{{city}}</option>
+        <option default>Selecteer district</option>
+        <option *ngFor="let city of citiesList" value="{{city}}">
+            {{city}}
+        </option>
     </select>
 </div>

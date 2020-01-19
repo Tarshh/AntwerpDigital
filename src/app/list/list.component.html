@@ -1,0 +1,19 @@
+<!-- (<ul>
+    <li *ngFor="let park of parkList">{{park.district}}</li>
+</ul>) -->
+
+<table class="table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th *ngFor="let column of columnList" scope="col">{{column}} </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" mdbTableCol *ngFor="let park of parkList">
+            <td>{{park.district}}</td>
+            <td>{{park.naam}}</td>
+            <td>{{park.straatnaam}}</td>
+            <td>{{park.verlichting}}</td>
+        </tr>
+    </tbody>
+</table>

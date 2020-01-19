@@ -15,34 +15,13 @@ export class MapService {
     cities: string[] = [];
     searchValue: string;
     filteredFeatures: Feature[] = [];
-    constructor(private http: HttpClient, private stringService: StringService) { }
+    constructor(private http: HttpClient) { }
 
     getData(): Observable<RootObject> {
         return this.http.get<RootObject>(this.url);
     }
 
-    getCities(): string[] {
-        this.getData().subscribe(response => {
-            response.features.forEach(element => {
-                this.cities.push(this.stringService.formatString(element.attributes.district));
-            });
-        })
-        return this.cities;
-    }
-
     setSearchValue(value: string): void {
         this.searchValue = value.toLocaleUpperCase();
-    }
-
-    async getSearchValue(): Promise<Feature[]> {
-        this.filteredFeatures = [];
-        await this.getData().subscribe((response) => {
-            response.features.map(feature => {
-                if (feature.attributes.district === this.searchValue) {
-                    this.filteredFeatures.push(feature);
-                };
-            });
-        })
-        return this.filteredFeatures;
     }
 }

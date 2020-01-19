@@ -1,4 +1,10 @@
 #map{
-    height: 70vh;
+    height: 88.8vh;
     width: 100%;
    }
+
+app-search{
+    margin: 0 !important;
+    background-color: black;
+}
+      
